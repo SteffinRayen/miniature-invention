@@ -1,0 +1,44 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from AreaService WSDL service -->
+
+  <service name="Area" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://shapes.com"/>
+      <parameter name="wsdlServiceElement" value="AreaService"/>
+      <parameter name="schemaQualified" value="http://shapes.com"/>
+      <parameter name="wsdlServicePort" value="Area"/>
+      <parameter name="className" value="com.shapes.AreaSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Area"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="square" qname="operNS:square" xmlns:operNS="http://shapes.com" returnQName="retNS:squareReturn" xmlns:retNS="http://shapes.com" returnType="rtns:float" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:side" xmlns:pns="http://shapes.com" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="circle" qname="operNS:circle" xmlns:operNS="http://shapes.com" returnQName="retNS:circleReturn" xmlns:retNS="http://shapes.com" returnType="rtns:float" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:radius" xmlns:pns="http://shapes.com" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="triangle" qname="operNS:triangle" xmlns:operNS="http://shapes.com" returnQName="retNS:triangleReturn" xmlns:retNS="http://shapes.com" returnType="rtns:float" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:base" xmlns:pns="http://shapes.com" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:height" xmlns:pns="http://shapes.com" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="rectangle" qname="operNS:rectangle" xmlns:operNS="http://shapes.com" returnQName="retNS:rectangleReturn" xmlns:retNS="http://shapes.com" returnType="rtns:float" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:length" xmlns:pns="http://shapes.com" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:width" xmlns:pns="http://shapes.com" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="parallelogram" qname="operNS:parallelogram" xmlns:operNS="http://shapes.com" returnQName="retNS:parallelogramReturn" xmlns:retNS="http://shapes.com" returnType="rtns:float" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:base" xmlns:pns="http://shapes.com" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:height" xmlns:pns="http://shapes.com" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="square parallelogram rectangle circle triangle"/>
+
+  </service>
+</deployment>

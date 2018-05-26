@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from VolumeService WSDL service -->
+
+  <service name="Volume" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://shapes.com"/>
+      <parameter name="wsdlServiceElement" value="VolumeService"/>
+      <parameter name="schemaQualified" value="http://shapes.com"/>
+      <parameter name="wsdlServicePort" value="Volume"/>
+      <parameter name="className" value="com.shapes.Volume"/>
+      <parameter name="wsdlPortType" value="Volume"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://shapes.com" xmlns:retNS="http://shapes.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="prism" qname="operNS:prism" returnQName="retNS:prismReturn" returnType="rtns:float" soapAction="">
+        <parameter xmlns:pns="http://shapes.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:length" type="tns:float"/>
+        <parameter xmlns:pns="http://shapes.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:width" type="tns:float"/>
+        <parameter xmlns:pns="http://shapes.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:height" type="tns:float"/>
+      </operation>
+      <operation xmlns:operNS="http://shapes.com" xmlns:retNS="http://shapes.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="cube" qname="operNS:cube" returnQName="retNS:cubeReturn" returnType="rtns:float" soapAction="">
+        <parameter xmlns:pns="http://shapes.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:side" type="tns:float"/>
+      </operation>
+      <operation xmlns:operNS="http://shapes.com" xmlns:retNS="http://shapes.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="cylinder" qname="operNS:cylinder" returnQName="retNS:cylinderReturn" returnType="rtns:float" soapAction="">
+        <parameter xmlns:pns="http://shapes.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:baseArea" type="tns:float"/>
+        <parameter xmlns:pns="http://shapes.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:height" type="tns:float"/>
+      </operation>
+      <operation xmlns:operNS="http://shapes.com" xmlns:retNS="http://shapes.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="sphere" qname="operNS:sphere" returnQName="retNS:sphereReturn" returnType="rtns:float" soapAction="">
+        <parameter xmlns:pns="http://shapes.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:radius" type="tns:float"/>
+      </operation>
+      <operation xmlns:operNS="http://shapes.com" xmlns:retNS="http://shapes.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="cone" qname="operNS:cone" returnQName="retNS:coneReturn" returnType="rtns:float" soapAction="">
+        <parameter xmlns:pns="http://shapes.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:baseArea" type="tns:float"/>
+        <parameter xmlns:pns="http://shapes.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:height" type="tns:float"/>
+      </operation>
+      <parameter name="allowedMethods" value="sphere cylinder cube cone prism"/>
+
+  </service>
+</deployment>

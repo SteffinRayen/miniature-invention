@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://shapes.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://shapes.com" xmlns:intf="http://shapes.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://shapes.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="square">
+    <complexType>
+     <sequence>
+      <element name="side" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="squareResponse">
+    <complexType>
+     <sequence>
+      <element name="squareReturn" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="circle">
+    <complexType>
+     <sequence>
+      <element name="radius" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="circleResponse">
+    <complexType>
+     <sequence>
+      <element name="circleReturn" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="triangle">
+    <complexType>
+     <sequence>
+      <element name="base" type="xsd:float"/>
+      <element name="height" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="triangleResponse">
+    <complexType>
+     <sequence>
+      <element name="triangleReturn" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="rectangle">
+    <complexType>
+     <sequence>
+      <element name="length" type="xsd:float"/>
+      <element name="width" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="rectangleResponse">
+    <complexType>
+     <sequence>
+      <element name="rectangleReturn" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="parallelogram">
+    <complexType>
+     <sequence>
+      <element name="base" type="xsd:float"/>
+      <element name="height" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="parallelogramResponse">
+    <complexType>
+     <sequence>
+      <element name="parallelogramReturn" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="parallelogramResponse">
+
+      <wsdl:part element="impl:parallelogramResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="rectangleRequest">
+
+      <wsdl:part element="impl:rectangle" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="parallelogramRequest">
+
+      <wsdl:part element="impl:parallelogram" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="rectangleResponse">
+
+      <wsdl:part element="impl:rectangleResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="squareRequest">
+
+      <wsdl:part element="impl:square" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="squareResponse">
+
+      <wsdl:part element="impl:squareResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="triangleResponse">
+
+      <wsdl:part element="impl:triangleResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="circleResponse">
+
+      <wsdl:part element="impl:circleResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="circleRequest">
+
+      <wsdl:part element="impl:circle" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="triangleRequest">
+
+      <wsdl:part element="impl:triangle" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Area">
+
+      <wsdl:operation name="square">
+
+         <wsdl:input message="impl:squareRequest" name="squareRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:squareResponse" name="squareResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="circle">
+
+         <wsdl:input message="impl:circleRequest" name="circleRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:circleResponse" name="circleResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="triangle">
+
+         <wsdl:input message="impl:triangleRequest" name="triangleRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:triangleResponse" name="triangleResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="rectangle">
+
+         <wsdl:input message="impl:rectangleRequest" name="rectangleRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:rectangleResponse" name="rectangleResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="parallelogram">
+
+         <wsdl:input message="impl:parallelogramRequest" name="parallelogramRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:parallelogramResponse" name="parallelogramResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="AreaSoapBinding" type="impl:Area">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="square">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="squareRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="squareResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="circle">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="circleRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="circleResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="triangle">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="triangleRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="triangleResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="rectangle">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="rectangleRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="rectangleResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="parallelogram">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="parallelogramRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="parallelogramResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="AreaService">
+
+      <wsdl:port binding="impl:AreaSoapBinding" name="Area">
+
+         <wsdlsoap:address location="http://localhost:8080/miniature-invention/services/Area"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

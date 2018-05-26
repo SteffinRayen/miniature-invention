@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://shapes.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://shapes.com" xmlns:intf="http://shapes.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://shapes.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="prism">
+    <complexType>
+     <sequence>
+      <element name="length" type="xsd:float"/>
+      <element name="width" type="xsd:float"/>
+      <element name="height" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="prismResponse">
+    <complexType>
+     <sequence>
+      <element name="prismReturn" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cube">
+    <complexType>
+     <sequence>
+      <element name="side" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cubeResponse">
+    <complexType>
+     <sequence>
+      <element name="cubeReturn" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cylinder">
+    <complexType>
+     <sequence>
+      <element name="baseArea" type="xsd:float"/>
+      <element name="height" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cylinderResponse">
+    <complexType>
+     <sequence>
+      <element name="cylinderReturn" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sphere">
+    <complexType>
+     <sequence>
+      <element name="radius" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sphereResponse">
+    <complexType>
+     <sequence>
+      <element name="sphereReturn" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cone">
+    <complexType>
+     <sequence>
+      <element name="baseArea" type="xsd:float"/>
+      <element name="height" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="coneResponse">
+    <complexType>
+     <sequence>
+      <element name="coneReturn" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="coneRequest">
+
+      <wsdl:part element="impl:cone" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="cubeResponse">
+
+      <wsdl:part element="impl:cubeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sphereResponse">
+
+      <wsdl:part element="impl:sphereResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="cylinderResponse">
+
+      <wsdl:part element="impl:cylinderResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="prismRequest">
+
+      <wsdl:part element="impl:prism" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="cubeRequest">
+
+      <wsdl:part element="impl:cube" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="coneResponse">
+
+      <wsdl:part element="impl:coneResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="cylinderRequest">
+
+      <wsdl:part element="impl:cylinder" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="prismResponse">
+
+      <wsdl:part element="impl:prismResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sphereRequest">
+
+      <wsdl:part element="impl:sphere" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Volume">
+
+      <wsdl:operation name="prism">
+
+         <wsdl:input message="impl:prismRequest" name="prismRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:prismResponse" name="prismResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cube">
+
+         <wsdl:input message="impl:cubeRequest" name="cubeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:cubeResponse" name="cubeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cylinder">
+
+         <wsdl:input message="impl:cylinderRequest" name="cylinderRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:cylinderResponse" name="cylinderResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sphere">
+
+         <wsdl:input message="impl:sphereRequest" name="sphereRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sphereResponse" name="sphereResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cone">
+
+         <wsdl:input message="impl:coneRequest" name="coneRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:coneResponse" name="coneResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="VolumeSoapBinding" type="impl:Volume">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="prism">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="prismRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="prismResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cube">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="cubeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="cubeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cylinder">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="cylinderRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="cylinderResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sphere">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sphereRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sphereResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cone">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="coneRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="coneResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="VolumeService">
+
+      <wsdl:port binding="impl:VolumeSoapBinding" name="Volume">
+
+         <wsdlsoap:address location="http://localhost:8080/miniature-invention/services/Volume"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
